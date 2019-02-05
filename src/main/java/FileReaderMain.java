@@ -1,14 +1,10 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class FileReaderMain {
 
     public static void main(String[] args) {
-        Map<String, Set<String>> map = new HashMap<>();
+        ConcurrentMap<String, Set<String>> map = new ConcurrentHashMap<>();
         ExecutorService service = Executors.newFixedThreadPool(5);
 
         for (String fileName : args)
