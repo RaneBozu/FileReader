@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class WriteToFile {
     private Map<String, Set<String>> map;
-    private static final Logger log = LogManager.getLogger(WriteToFile.class);
+    private static final Logger log = LogManager.getLogger(WriteToFile.class.getName());
 
     public WriteToFile(Map<String, Set<String>> map) {
         this.map = map;
@@ -22,10 +22,10 @@ public class WriteToFile {
                 for (String str : sValues) {
                     bw.write(str + ";");
                 }
-                log.info("File \"" + entry.getKey() + "\"  was created.");
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+            log.info("File \"" + entry.getKey() + "\"  was created.");
         }
     }
 }
